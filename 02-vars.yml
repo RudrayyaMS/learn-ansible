@@ -1,8 +1,20 @@
+#play lavel variables
 - name: play variables
   hosts: localhost
   vars:
     URL: play.example.com
   tasks:
     - name: print play variables
+      ansible.builtin.debug:
+        msg: URL {{ URL }}
+
+#variables form a file
+- name: play variable form a file
+  hosts: localhost
+# var_files only works on play level , on the tasks you cannot load the files
+  vars_files:
+    - var.yml
+  tasks:
+    - name: print play variable from a file
       ansible.builtin.debug:
         msg: URL {{ URL }}
