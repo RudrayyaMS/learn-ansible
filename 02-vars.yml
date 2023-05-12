@@ -20,7 +20,7 @@
         msg: URL =  {{ URL }}
 
 # Task level variable
-- name: Task level variable
+- name: play variable
   hosts: localhost
   tasks:
     - name: print task level variable
@@ -28,3 +28,11 @@
         URL: task.example.com
       ansible.builtin.debug:
         msg: URL = {{ URL }}
+
+#inventory level variables
+- name: variable from inventory
+  hosts: all
+  tasks:
+    - name: print play variable from inventory
+      ansible.builtin.debug:
+        msg: URL ={{ URL }}
