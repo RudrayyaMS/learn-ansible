@@ -5,4 +5,4 @@
   tasks:
     -  name: tasks
        debug:
-         msg: "{{ URL | split('/') }}"
+         msg: "{{ URL | split('/') | last }}"
