@@ -9,5 +9,13 @@
         - Banana
         - Orange
 
+    - name: Print Fruit Name with Quantity
+      debug:
+        msg: Fruit Name - {{ item.name }} , quantity - {{ item.quantity }}
+        loop:
+          - { name: "Apple" , quantity: 10 }
+          - { name: "Banana" , quantity: 20 }
+          - { name: "Orange" , quantity: 30 }
+
 # for i in apple bana ; do echo $i
 # in ansible we have to use {{ item }}
